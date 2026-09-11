@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KedaraIsaikoodam | Carnatic Vocal Music School</title>
+<meta name="description" content="KedaraIsaikoodam — Carnatic vocal music classes for children (age 3+) and adults. Online & offline classes in Dubai and Chennai (Medavakkam), with students across the UAE, USA, Canada, Germany, Singapore, Poland, the UK and Scotland.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --saffron:#d98f2b;
+    --saffron-deep:#b8691f;
+    --maroon:#7a1f2b;
+    --maroon-deep:#5c141d;
+    --ochre:#c97a1a;
+    --ivory:#fdf6ea;
+    --ivory-deep:#f7ead2;
+    --ink:#2c1810;
+    --ink-soft:#5c4a3a;
+    --gold:#c9a24b;
+    --white:#fffaf0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Mukta',sans-serif;
+    color:var(--ink);
+    background:var(--ivory);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.brand{font-family:'Cormorant Garamond',serif;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  .container{max-width:1080px;margin:0 auto;padding:0 24px;}
+  section{padding:72px 0;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(253,246,234,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(122,31,43,0.12);
+  }
+  .nav-wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;max-width:1080px;margin:0 auto;
+  }
+  .brand{font-size:1.5rem;font-weight:700;color:var(--maroon);letter-spacing:.02em;display:flex;align-items:center;gap:10px;}
+  .brand span{color:var(--saffron-deep);}
+  .brand img{height:38px;width:38px;object-fit:contain;display:block;}
+  nav ul{list-style:none;display:flex;gap:28px;}
+  nav a{font-weight:600;font-size:.95rem;color:var(--ink-soft);transition:color .2s;}
+  nav a:hover{color:var(--maroon);}
+  .nav-toggle{display:none;background:none;border:none;font-size:1.6rem;color:var(--maroon);cursor:pointer;}
+
+  @media (max-width:760px){
+    nav ul{
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--ivory);flex-direction:column;gap:0;
+      display:none;border-top:1px solid rgba(122,31,43,0.12);
+    }
+    nav ul.open{display:flex;}
+    nav a{display:block;padding:14px 24px;border-bottom:1px solid rgba(122,31,43,0.08);}
+    .nav-toggle{display:block;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:
+      radial-gradient(circle at 15% 20%, rgba(201,122,26,0.18), transparent 45%),
+      radial-gradient(circle at 85% 80%, rgba(122,31,43,0.15), transparent 50%),
+      linear-gradient(160deg, var(--ivory) 0%, var(--ivory-deep) 100%);
+    padding:88px 0 72px;
+    position:relative;
+  }
+  .hero-inner{
+    max-width:1080px;margin:0 auto;padding:0 24px;
+    display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;
+  }
+  @media (max-width:820px){.hero-inner{grid-template-columns:1fr;text-align:center;}}
+  .eyebrow{
+    display:inline-block;font-weight:700;font-size:.8rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--maroon);
+    background:rgba(217,143,43,0.15);border:1px solid rgba(217,143,43,0.4);
+    padding:6px 14px;border-radius:999px;margin-bottom:18px;
+  }
+  .hero h1{font-size:clamp(2.2rem,5vw,3.4rem);color:var(--maroon-deep);font-weight:700;line-height:1.15;}
+  .hero h1 em{font-style:normal;color:var(--saffron-deep);}
+  .hero p.lead{margin-top:18px;font-size:1.1rem;color:var(--ink-soft);max-width:46ch;}
+  @media (max-width:820px){.hero p.lead{margin-inline:auto;}}
+  .cta-row{margin-top:32px;display:flex;gap:16px;flex-wrap:wrap;}
+  @media (max-width:820px){.cta-row{justify-content:center;}}
+  .btn{
+    display:inline-block;padding:14px 28px;border-radius:8px;font-weight:700;
+    font-size:.95rem;transition:transform .15s, box-shadow .15s;
+  }
+  .btn-primary{background:var(--maroon);color:var(--white);box-shadow:0 6px 18px rgba(122,31,43,0.3);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(122,31,43,0.38);}
+  .btn-outline{border:2px solid var(--maroon);color:var(--maroon);}
+  .btn-outline:hover{background:var(--maroon);color:var(--white);}
+
+  .hero-art{
+    aspect-ratio:4/5;border-radius:20px;
+    background:linear-gradient(145deg, var(--saffron) 0%, var(--maroon) 100%);
+    display:flex;align-items:center;justify-content:center;
+    position:relative;overflow:hidden;
+    box-shadow:0 20px 50px rgba(92,20,29,0.25);
+  }
+  .hero-art::before,.hero-art::after{
+    content:"";position:absolute;border-radius:50%;
+    border:2px solid rgba(255,250,240,0.35);
+  }
+  .hero-art::before{width:70%;height:70%;top:15%;left:15%;}
+  .hero-art::after{width:40%;height:40%;top:30%;left:30%;}
+  /* To swap the hero image for a class/performance photo instead of the logo,
+     just change the src on the <img> inside .hero-art further down the page. */
+
+  /* ---------- Section headers ---------- */
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 44px;}
+  .sec-head .eyebrow{margin-bottom:12px;}
+  .sec-head h2{font-size:clamp(1.8rem,3.5vw,2.4rem);color:var(--maroon-deep);}
+  .sec-head p{color:var(--ink-soft);margin-top:12px;}
+
+  /* ---------- About ---------- */
+  .about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:16px;}
+  @media (max-width:760px){.about-grid{grid-template-columns:1fr;}}
+  .card{
+    background:var(--white);border:1px solid rgba(122,31,43,0.1);
+    border-radius:14px;padding:28px;text-align:center;
+    box-shadow:0 8px 24px rgba(92,20,29,0.06);
+  }
+  .card .icon{font-size:2.2rem;margin-bottom:14px;}
+  .card h3{color:var(--maroon);font-size:1.25rem;margin-bottom:8px;}
+  .card p{color:var(--ink-soft);font-size:.95rem;}
+
+  /* ---------- Locations ---------- */
+  .locations{background:var(--ivory-deep);}
+  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:16px;}
+  @media (max-width:760px){.loc-grid{grid-template-columns:1fr;}}
+  .loc-card{
+    background:var(--white);border-radius:16px;overflow:hidden;
+    border:1px solid rgba(122,31,43,0.1);box-shadow:0 10px 28px rgba(92,20,29,0.08);
+  }
+  .loc-banner{
+    padding:22px 26px;background:linear-gradient(120deg,var(--maroon),var(--maroon-deep));
+    color:var(--white);
+  }
+  .loc-banner h3{font-size:1.4rem;}
+  .loc-banner span{display:block;font-size:.85rem;opacity:.85;margin-top:4px;}
+  .loc-body{padding:22px 26px;}
+  .loc-body ul{list-style:none;}
+  .loc-body li{
+    padding:8px 0;border-bottom:1px dashed rgba(122,31,43,0.15);
+    display:flex;justify-content:space-between;gap:12px;font-size:.95rem;color:var(--ink-soft);
+  }
+  .loc-body li:last-child{border-bottom:none;}
+  .loc-body li b{color:var(--ink);}
+
+  /* ---------- International strip ---------- */
+  .intl{
+    background:linear-gradient(120deg,var(--maroon-deep),var(--maroon));
+    color:var(--white);text-align:center;padding:48px 24px;
+  }
+  .intl h3{font-size:1.4rem;margin-bottom:14px;}
+  .flags{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:16px;}
+  .flag-pill{
+    background:rgba(255,250,240,0.12);border:1px solid rgba(255,250,240,0.3);
+    padding:8px 18px;border-radius:999px;font-size:.9rem;font-weight:600;
+  }
+
+  /* ---------- Videos ---------- */
+  .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:16px;}
+  .video-card{
+    background:var(--white);border-radius:14px;overflow:hidden;
+    border:1px solid rgba(122,31,43,0.1);box-shadow:0 8px 24px rgba(92,20,29,0.06);
+  }
+  .video-frame{position:relative;padding-top:56.25%;background:#1a1a1a;}
+  .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .video-title{padding:14px 18px;font-weight:600;color:var(--maroon-deep);font-size:.95rem;}
+
+  /* ---------- Gallery ---------- */
+  .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px;}
+  @media (max-width:760px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
+  .gal-item{
+    aspect-ratio:1/1;border-radius:12px;overflow:hidden;
+    background:linear-gradient(145deg,var(--saffron) 0%,var(--gold) 100%);
+    display:flex;align-items:center;justify-content:center;
+    color:rgba(255,250,240,0.9);font-size:1.8rem;
+  }
+  .gal-item img{width:100%;height:100%;object-fit:cover;display:block;}
+
+  /* ---------- Contact ---------- */
+  .contact{background:var(--ivory-deep);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:16px;}
+  @media (max-width:760px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-card{
+    background:var(--white);border-radius:14px;padding:28px;
+    border:1px solid rgba(122,31,43,0.1);box-shadow:0 8px 24px rgba(92,20,29,0.06);
+  }
+  .contact-card h3{color:var(--maroon);margin-bottom:16px;font-size:1.3rem;}
+  .contact-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;}
+  .contact-row .ic{font-size:1.3rem;}
+  .contact-row div b{display:block;color:var(--ink);}
+  .contact-row div span{color:var(--ink-soft);font-size:.92rem;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--maroon-deep);color:rgba(255,250,240,0.85);
+    text-align:center;padding:32px 24px;font-size:.9rem;
+  }
+  footer .brand{color:var(--white);margin-bottom:6px;font-size:1.2rem;}
+
+  .whatsapp-fab{
+    position:fixed;bottom:22px;right:22px;z-index:60;
+    background:#25D366;color:#fff;width:58px;height:58px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-size:1.6rem;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a href="#top" class="brand"><img src="images/logo-icon.png" alt="KedaraIsaikoodam logo"><span>Kedara</span>Isaikoodam</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    <nav>
+      <ul id="navList">
+        <li><a href="#about">About</a></li>
+        <li><a href="#locations">Locations</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div id="top"></div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="eyebrow">Carnatic Vocal Music School</span>
+      <h1>Learn the art of <em>Carnatic</em> vocal music, from age 3 to adulthood</h1>
+      <p class="lead">KedaraIsaikoodam offers structured Carnatic vocal training for children and adults — online and in person — in Dubai and Chennai (Medavakkam), with students learning from as far as the US, Canada, Germany, Singapore, Poland, the UK and Scotland.</p>
+      <div class="cta-row">
+        <a href="#contact" class="btn btn-primary">Enrol a Student</a>
+        <a href="#videos" class="btn btn-outline">Watch Performances</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="images/logo-full.png" alt="KedaraIsaikoodam logo" style="width:72%;height:auto;position:relative;z-index:1;">
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">About Us</span>
+      <h2>Carnatic vocal music, taught with tradition and care</h2>
+      <p>KedaraIsaikoodam focuses exclusively on Carnatic vocal music — nurturing every student from their very first swara to the development of Manodharma, building a strong foundation in voice, raga, tala, repertoire, and the art of musical expression.</p>
+    </div>
+    <div class="about-grid">
+      <div class="card">
+        <div class="icon">&#127925;</div>
+        <h3>Age 3 to Adult</h3>
+        <p>Structured beginner, intermediate and advanced levels for kids as young as 3, teenagers and adults.</p>
+      </div>
+      <div class="card">
+        <div class="icon">&#128249;</div>
+        <h3>Online &amp; Offline</h3>
+        <p>Live online classes worldwide, home tutoring in Dubai, and a full centre in Chennai (Medavakkam) with both online and offline batches.</p>
+      </div>
+      <div class="card">
+        <div class="icon">&#128218;</div>
+        <h3>Bridge Academy Syllabus</h3>
+        <p>Our teachers are enrolled in the Bridge Academy syllabus, and students appear for Bridge Academy examinations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="locations" class="locations">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Where We Teach</span>
+      <h2>Two centres, one tradition</h2>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-card">
+        <div class="loc-banner">
+          <h3>Dubai, UAE</h3>
+          <span>Dubai Silicon Oasis (DSO)</span>
+        </div>
+        <div class="loc-body">
+          <ul>
+            <li><span>Format</span><b>Online &amp; home tutoring (offline)</b></li>
+            <li><span>Address</span><b>Dubai Silicon Oasis, Dubai, UAE</b></li>
+            <li><span>Contact</span><b>+971 52 768 2726</b></li>
+          </ul>
+        </div>
+      </div>
+      <div class="loc-card">
+        <div class="loc-banner">
+          <h3>Chennai, India</h3>
+          <span>Medavakkam Centre</span>
+        </div>
+        <div class="loc-body">
+          <ul>
+            <li><span>Students</span><b>150+ enrolled</b></li>
+            <li><span>Faculty</span><b>4 dedicated teachers</b></li>
+            <li><span>Format</span><b>Online &amp; offline classes at the centre</b></li>
+            <li><span>Contact</span><b>+91 99629 80152</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="intl">
+  <div class="container">
+    <h3>Our students also join us online from</h3>
+    <div class="flags">
+      <span class="flag-pill">&#127482;&#127480; United States</span>
+      <span class="flag-pill">&#127464;&#127462; Canada</span>
+      <span class="flag-pill">&#127465;&#127466; Germany</span>
+      <span class="flag-pill">&#127480;&#127468; Singapore</span>
+      <span class="flag-pill">&#127477;&#127473; Poland</span>
+      <span class="flag-pill">&#127468;&#127463; United Kingdom</span>
+      <span class="flag-pill">&#127988;&#917607;&#917619;&#917596;&#917612;&#917619;&#917631;&#917631;&#917607; Scotland</span>
+    </div>
+  </div>
+</section>
+
+<section id="videos">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Performances &amp; Lessons</span>
+      <h2>Watch our students in action</h2>
+      <p>To add or change a video: edit the <code>videos</code> list near the top of the &lt;script&gt; at the bottom of this file with the YouTube video ID and title, then save.</p>
+    </div>
+    <div class="video-grid" id="videoGrid"></div>
+  </div>
+</section>
+
+<section id="gallery" style="background:var(--ivory-deep);">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Moments</span>
+      <h2>From our classes and recitals</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gal-item"><img src="images/gallery-1.jpg" alt="KedaraIsaikoodam students with certificates"></div>
+      <div class="gal-item"><img src="images/gallery-2.jpg" alt="KedaraIsaikoodam students performing"></div>
+      <div class="gal-item"><img src="images/gallery-3.jpg" alt="KedaraIsaikoodam award presentation"></div>
+      <div class="gal-item"><img src="images/gallery-4.jpg" alt="KedaraIsaikoodam students on stage"></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Get in Touch</span>
+      <h2>Begin your Carnatic music journey</h2>
+      <p>Reach out to enrol, ask about class timings, or learn more about our online and offline batches.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Dubai Centre</h3>
+        <div class="contact-row"><span class="ic">&#128205;</span><div><b>Address</b><span>Dubai Silicon Oasis, Dubai, UAE</span></div></div>
+        <div class="contact-row"><span class="ic">&#128222;</span><div><b>Phone / WhatsApp</b><span>+971 52 768 2726</span></div></div>
+        <div class="contact-row"><span class="ic">&#128247;</span><div><b>Instagram</b><span>@kedaraisaikoodam</span></div></div>
+      </div>
+      <div class="contact-card">
+        <h3>Chennai Centre (Medavakkam)</h3>
+        <div class="contact-row"><span class="ic">&#128101;</span><div><b>Faculty</b><span>4 teachers, online &amp; offline classes</span></div></div>
+        <div class="contact-row"><span class="ic">&#127891;</span><div><b>Students</b><span>150+ learners currently enrolled</span></div></div>
+        <div class="contact-row"><span class="ic">&#128222;</span><div><b>Phone / WhatsApp</b><span>+91 99629 80152</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">KedaraIsaikoodam</div>
+  <div>Carnatic Vocal Music &middot; Dubai &amp; Chennai &middot; &copy; <span id="year"></span></div>
+</footer>
+
+<a class="whatsapp-fab" href="https://wa.me/971527682726" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">&#128222;</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile nav toggle
+  document.getElementById('navToggle').addEventListener('click', function(){
+    document.getElementById('navList').classList.toggle('open');
+  });
+
+  /* =========================================================
+     EDIT THIS LIST TO ADD / CHANGE YOUTUBE VIDEOS
+     - id: the part of the YouTube URL after "v=" (or after youtu.be/)
+       e.g. https://www.youtube.com/watch?v=dQw4w9WgXcQ  ->  id: "dQw4w9WgXcQ"
+     - title: caption shown under the video
+     Add or remove as many entries as you like.
+  ========================================================= */
+  var videos = [
+    { id: "dQw4w9WgXcQ", title: "Sample performance — replace with your video ID" },
+    { id: "dQw4w9WgXcQ", title: "Sample recital — replace with your video ID" }
+  ];
+
+  var grid = document.getElementById('videoGrid');
+  videos.forEach(function(v){
+    var card = document.createElement('div');
+    card.className = 'video-card';
+    card.innerHTML =
+      '<div class="video-frame"><iframe src="https://www.youtube.com/embed/' + v.id +
+      '" title="' + v.title + '" allowfullscreen loading="lazy"></iframe></div>' +
+      '<div class="video-title">' + v.title + '</div>';
+    grid.appendChild(card);
+  });
+</script>
+
+</body>
+</html>
